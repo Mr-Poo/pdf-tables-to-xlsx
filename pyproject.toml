@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf_tables_to_xlsx"
+version = "1.0.0"
+description = "Extract tables from text-based PDFs into Excel/CSV, fully offline"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pdfplumber>=0.11,<1.0",
+    "openpyxl>=3.1,<4.0",
+]
+
+[project.scripts]
+pdf_tables_to_xlsx = "pdf_tables_to_xlsx.cli:main"
+
+[tool.setuptools]
+packages = ["pdf_tables_to_xlsx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
